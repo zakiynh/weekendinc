@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Tilt from "react-tilt";
 
 function SectionBottom() {
     const { helpTips } = useSelector((state) => state.helpTips);
@@ -10,7 +11,7 @@ function SectionBottom() {
         AOS.init({
             duration: 2000,
         });
-    AOS.refresh();
+        AOS.refresh();
     }, []);
     return (
         <div className="bg-[#000000] lg:relative h-full w-full pt-28 lg:items-center lg:flex lg:flex-col">
@@ -50,8 +51,10 @@ function SectionBottom() {
                 </div>
             </div>
             <div className="p-8 text-white lg:w-[619px] lg:text-center lg:mb-[200px]">
-                <div className="font-bold text-2xl ">You’re all set.</div>
-                <div className="font-bold text-base mt-7">The wise man therefore always holds in these matters to this principle of selection.</div>
+                <Tilt className="Tilt" options={{ max: 35 }}>
+                    <div className="font-bold text-2xl ">You’re all set.</div>
+                    <div className="font-bold text-base mt-7">The wise man therefore always holds in these matters to this principle of selection.</div>
+                </Tilt>
             </div>
             <div className="pt-12 lg:absolute lg:bottom-0 lg:left-0">
                 <img src="assets/png/Group-3.png" className="object-fill h-[337px] w-[253px]" alt="bg-astronot-rev" />
